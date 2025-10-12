@@ -1,4 +1,4 @@
-import { bundle } from 'https://deno.land/x/emit@0.38.1/mod.ts';
+import { bundle } from 'https://deno.land/x/emit@0.40.0/mod.ts';
 
 const DEBUG = Deno.env.get('DEBUG');
 const { compilerOptions, imports } = JSON.parse(Deno.readTextFileSync('deno.json'));
@@ -69,12 +69,12 @@ const result = await Promise.allSettled([
   ),
 
   download(
-    'https://cdn.jsdelivr.net/npm/mermaid@11.8.1/dist/mermaid.min.js',
+    'https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.min.js',
     'public/mermaid.min.js',
   ),
 
   download(
-    'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+    'https://cdn.jsdelivr.net/npm/katex@0.16.24/dist/katex.min.css',
     'public/katex.min.css',
   ),
 
@@ -101,7 +101,7 @@ const result = await Promise.allSettled([
     'KaTeX_Typewriter-Regular.woff2',
   ].map((font) =>
     download(
-      `https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/fonts/${font}`,
+      `https://cdn.jsdelivr.net/npm/katex@0.16.24/dist/fonts/${font}`,
       `public/fonts/${font}`,
     )
   ),
